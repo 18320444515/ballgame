@@ -24,10 +24,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
      */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/C_lobby") // 广播式注册 stompClient 的方式
+        registry.addEndpoint("/C_lobby") // 广播式 stompClient 的注册方式
                 .withSockJS() ;
 
-        registry.addEndpoint("/C_player") // 对点式注册 stompClient 的方式
+        registry.addEndpoint("/C_player") // 对点式stompClient 的注册方式
                 .setAllowedOrigins("*")   // 添加允许跨域访问
                 .withSockJS() ;
     }

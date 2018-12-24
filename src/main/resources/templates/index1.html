@@ -36,12 +36,15 @@
         stompClient.connect({},function (frame) {
             setConnected(true);
             console.log("connected : "+frame);
+            // 此页面发送消息时设置的 id 为 123
             stompClient.subscribe('/player/' + 123 + '/say',function (response) {
                 showResponse("我说：" + response.body);
             })
+            // index2页面发送消息时设置的 id 为 1234
             stompClient.subscribe('/player/' + 1234 + '/say',function (response) {
                 showResponse("他说：" + response.body);
             })
+            // 表示来自大厅的消息
             stompClient.subscribe('/lobby/newMessage',function (response) {
                 showResponse("群发说：" + response.body);
             })

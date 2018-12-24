@@ -27,13 +27,19 @@ public class WebSocketController {
 //     * @param playerId 当前玩家的id
 //     * @return json格式的数据，发送给当前对战的双方
 //     */
-//    @MessageMapping("/byPlayer/{playerId}")
+//    @MessageMapping("/byPlayer/{playerId}")   // 这样是不行的
 //    public Object toPlayer(RequestMessage message,
 //                                    @PathVariable(name = "playerId")int playerId) {
 //        System.out.println("player "+playerId+" ----------------" + message.getMessage());
 //        this.messagingTemplate.convertAndSendToUser(""+playerId,"/say", message.getMessage());
 //        return message;
 //    }
+
+    /**
+     * 主要功能为实现玩家之间的广播（即对点式即时通信）
+     * @param message 已经装配好的 json 字符串
+     * @return json原样返回
+     */
     @MessageMapping("/byPlayer")
     public Object toPlayer(RequestMessage message) {
         System.out.println("player "+message.getSenderId()+" ----------------" + message.getMessage());
