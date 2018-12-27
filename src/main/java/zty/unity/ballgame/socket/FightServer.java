@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * 这是 fork 过来的
+ * 用于启动游戏对战 Socket 通信服务器
  */
 public class FightServer implements Runnable
 {
@@ -107,7 +108,7 @@ public class FightServer implements Runnable
 						// 将 json 字符串转化成对象
 						JSONObject jo = JSONObject.fromObject(msg);
 
-						// 判断是否属于匹配状态
+						// 判断是否属于匹配状态 ( "againWithId" 是暗号 )
 						if (jo.get("senderName").equals("againWithId")){
 							// 该玩家的当前序号
 							int index = Integer.parseInt((String) jo.get("message"));
@@ -117,13 +118,14 @@ public class FightServer implements Runnable
 								msg = "-1_0";
 							}else {
 								// 玩家2 和 玩家1 同时开始
+								// format = [房间序号 index] _ [Player1 id] _ [Player2 id]
 								msg = (index-1)+"_"+lastId.get(index-2)+"_"+jo.get("senderId");
 							}
 
 						}
-					}// 其他为纯数字
+					}// 其他为纯数字 [index]_[horizontal]_[vertical]
 
-					// 返回消息
+					// 返回消息（为了提高响应速度，尽量减少计算量，于是原封返回）
 					sendMsg();
 
 				}

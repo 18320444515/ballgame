@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * @author tianyi
  * @date 2018-12-24 12:01
+ * Jump to the .html page returned.
  */
 @Controller
 public class PageController {

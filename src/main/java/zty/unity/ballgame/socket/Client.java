@@ -8,6 +8,9 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+/**
+ * 用于模仿游戏玩家进行测试，主要用途为方式相关的请求（例如匹配模式）
+ */
 public class Client{
 	public int port = 8877;
 	Socket socket = null;

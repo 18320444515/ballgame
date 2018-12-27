@@ -14,6 +14,7 @@ import java.util.Collection;
 /**
  * @author tianyi
  * @date 2018-12-25 13:37
+ * Basic API of player.
  */
 @RestController
 @RequestMapping("/player")

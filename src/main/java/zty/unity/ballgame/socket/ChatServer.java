@@ -7,8 +7,9 @@ import java.util.*;
 
 /**
  * 这是 fork 过来的
+ * 用于启动大厅聊天 Socket 通信服务器
  */
-public class Server implements Runnable
+public class ChatServer implements Runnable
 {
 	int port = 7788;
 	private Thread tt;
@@ -18,13 +19,13 @@ public class Server implements Runnable
 	public static void main(String[] args)
 	{
 		try {
-			new Server();
+			new ChatServer();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public Server() throws IOException {
+	public ChatServer() throws IOException {
 			clients=new ArrayList<Socket>();
 			server=new ServerSocket(port);
 
