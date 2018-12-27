@@ -5,7 +5,7 @@ spring:
       suffix: .html
   datasource:
       driver-class-apartmentName: com.mysql.jdbc.Driver   #mysql的驱动
-      url: jdbc:mysql://127.0.0.1:3306/his?serverTimezone=UTC
+      url: jdbc:mysql://127.0.0.1:3306/ballgame?serverTimezone=UTC
       username: root
       password: root
   jpa:
@@ -18,17 +18,14 @@ spring:
                   #validate会验证表的属性是否与期望的一致，若不一致将报错
       show-sql: true
 
-qiniu:
-  AK: y-wrlAVBlsnIYFyP8CVoMB28VWW0onb-OtTrr_yW
-  SK: mjaX8bxphou9iMP8spUl9JgxYmiwIZbdb9i96a5d
-  spacename: utils
-  openUrl: http://pdeg9ntw0.bkt.clouddn.com
-
+mysocket:
+  server-host: 127.0.0.1
+  server-port: 7788
 
 server:
   servlet:
     context-path: /ball
-  port: 8080
+  port: 8093
 #  port: 443
 #  ssl:
 #      key-store: C:\Program Files\Apache Software Foundation\Tomcat 7.0\conf\cert\1525688816500.pfx

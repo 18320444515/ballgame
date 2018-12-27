@@ -30,6 +30,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.addEndpoint("/C_player") // 对点式stompClient 的注册方式
                 .setAllowedOrigins("*")   // 添加允许跨域访问
                 .withSockJS() ;
+
+        registry.addEndpoint("/U_player") // 对点式stompClient 的注册方式
+                .setAllowedOrigins("*")   // 添加允许跨域访问
+                ;
     }
 
     /**
